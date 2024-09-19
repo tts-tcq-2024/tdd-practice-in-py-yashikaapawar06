@@ -8,3 +8,8 @@
 7,test_throwExceptionForNegativeNumbers,"""1,-2""","Raises `ValueError` with message `""Negatives not allowed: -2""",Ensure that the function raises an appropriate exception when the input contains negative numbers.
 8,test_allowUnknownAmountOfNumbers,"""1,2,3,4,5""",15,Verify that the function can handle an unknown number of comma-separated values and returns the correct sum.
 9,test_customDelimiterWithMultipleCharacters,"""//[***]\n1***2***3""",6,"Verify that the function can handle custom delimiters of arbitrary length (e.g., ***) and return the correct sum of the numbers."
+10,test_handleAlphanumericCharacters,"""abc,123""","Raises ValueError with message ""Invalid input: contains non-numeric characters""",Verify that the function raises an appropriate exception when the input contains alphanumeric characters that are not valid numbers.
+11,test_handleOnlyDelimiters,""",,,\n""",0,Ensure that the function returns 0 when the input contains only delimiters without any numbers.
+12,test_handleInputOf1000,"""1000""",1000,Test that the function correctly includes the number 1000 in the sum calculation.
+13,test_customDelimiterWithEmptyInput,"""//[***]\n""",0," Ensure that the function returns 0 when no numbers are provided, even if a custom delimiter is specified."
+14,test_customDelimiterWithSpecialCharacters,"""//[!@#]\n1!@#2!@#3""",6," Ensure that the function correctly handles custom delimiters containing special characters (e.g., !@#)."
