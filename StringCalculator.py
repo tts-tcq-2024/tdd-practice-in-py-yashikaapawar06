@@ -26,7 +26,15 @@ def convert_to_numbers(numbers: str) -> List[int]:
 
 def validate_negatives(num_list: List[int]) -> None:
     """Check for negative numbers and raise an error if found."""
-    negatives = [num for num in num_list if num < 0]
+    negatives = find_negatives(num_list)
+    raise_if_negatives(negatives)
+
+def find_negatives(num_list: List[int]) -> List[int]:
+    """Find negative numbers in the list."""
+    return [num for num in num_list if num < 0]
+
+def raise_if_negatives(negatives: List[int]) -> None:
+    """Raise ValueError if there are negative numbers."""
     if negatives:
         raise ValueError(f"Negatives not allowed: {', '.join(map(str, negatives))}")
 
