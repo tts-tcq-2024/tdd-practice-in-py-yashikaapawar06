@@ -12,7 +12,7 @@ def add(numbers: str) -> int:
     
     num_list = list(map(int, numbers.split(",")))
     
-  
+ 
     negatives = [num for num in num_list if num < 0]
     if negatives:
         raise ValueError(f"Negatives not allowed: {', '.join(map(str, negatives))}")
